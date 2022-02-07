@@ -73,24 +73,25 @@ def main():
             "price_usd": "348.55438028859089896608051425045079",
         }
     }"""
+
     price_usd = float(data["data"]["price_usd"])
     log(f"{args['asset_name']} price in usd: {price_usd}")
 
     gt = args.get(">")
     if gt and price_usd > float(gt):
 
-        mmsg = cf_owl_pack_mmmsg(
+        mmsg = amocf_owl_pack_mm_msg(
             "text", f"{args['asset_name']} 当前价格: {price_usd:.3f} USD (> {gt} USD)"
         )
-        cf_owl_sendme_mmmsgs([mmsg])
+        amocf_owl_sendme_mm_msgs([mmsg])
         return
 
     lt = args.get("<")
     if lt and price_usd < float(lt):
-        mmsg = cf_owl_pack_mmmsg(
+        mmsg = amocf_owl_pack_mm_msg(
             "text", f"{args['asset_name']} 当前价格: {price_usd:.3f} USD (< {lt} USD)"
         )
-        cf_owl_sendme_mmmsgs([mmsg])
+        amocf_owl_sendme_mm_msgs([mmsg])
         return
 
 
