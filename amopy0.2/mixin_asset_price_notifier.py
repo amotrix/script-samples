@@ -1,5 +1,11 @@
+""" Amopy Script Sample Front Matter
+- title: 加密货币价格提醒
+- description: 当加密货币价格达到指定值时发送通知
+- version: 0.1
+"""
 from fake_builtin import *  # Valid only for development, ignored in production
 
+mixinapi = packages.mixin.api
 # Settings for Amo
 settings = {
     # Config (Required)
@@ -19,7 +25,7 @@ settings = {
         "contact": "Mixin ID: 37297553",
         # "amo-uid": "",  # AMO.RUN USER ID, 若填写，可获得相应电力值的分成。
     },
-    # Arguments (Optional, depends on script)
+    # Arguments (Optional, depends on script logic)
     "arguments": {
         "asset_id": {
             "label": "资产ID",
@@ -64,7 +70,7 @@ XIN = "c94ac88f-4671-3976-b60a-09064f1811e8"
 
 def main():
     # get price
-    data = mixin.api.network_read_historical_price(args["asset_id"])
+    data = mixinapi.network_read_historical_price(args["asset_id"])
     """e.g.
     data = {
         "data": {
