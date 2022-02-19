@@ -40,7 +40,7 @@ required = true
 [amo.triggers] # Optinal, Set default triggers to facilitate users to quickly deploy Amo
 # allowed trigger type: schedule
 [amo.triggers.schedule]
-enabled = true
+enable = true
 expr = "0 * * * *" # (cron expression) every hour at minute 0
 """
 
