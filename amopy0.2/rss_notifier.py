@@ -18,7 +18,7 @@ memory = 128         # Required
 
 [amo.profile] # Optional. Amo default profile
 title = "Pando Blog"
-description = "每小时检查一次价格，根据条件发送提醒消息"
+description = "每小时检查一次RSS地址，过滤出新文章，发送提醒消息"
 
 [amo.arguments] # Optional, depends on script logic
 # argument name: customized
@@ -28,7 +28,6 @@ description = "每小时检查一次价格，根据条件发送提醒消息"
 label = "RSS地址"
 type = "string"
 value = "https://docs.pando.im/blog/rss"
-hint = "可使用 Mixin 机器人 7000103061 查询资产ID"
 required = true
 [amo.arguments.region]
 label = "地区"
