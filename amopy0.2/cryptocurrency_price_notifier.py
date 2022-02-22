@@ -50,7 +50,7 @@ hint = "价格小于此值时发送提醒（单位: USD）"
 [amo.triggers] # Optinal, Set default triggers to facilitate users to quickly deploy Amo
 # allowed trigger type: schedule
 [amo.triggers.schedule]
-enabled = false
+enable = false
 expr = "0 * * * *" # (cron expression) every hour at minute 0
 """
 from fake_builtin import *  # Valid only for development, ignored in production
