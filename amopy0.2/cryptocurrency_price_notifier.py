@@ -26,9 +26,9 @@ description = "每小时检查一次价格，根据条件发送提醒消息（�
 # required: label, type
 [amo.arguments.asset_id]
 label = "资产ID"
-type = "string"
+type = "mixin_assets"
 value = "c94ac88f-4671-3976-b60a-09064f1811e8" # default is XIN
-hint = "可使用 Mixin 机器人 7000103061 查询资产ID"
+hint = "Mixin Network 资产ID"
 required = true
 [amo.arguments.asset_name]
 label = "资产名称"
@@ -50,7 +50,7 @@ hint = "价格小于此值时发送提醒（单位: USD）"
 [amo.triggers] # Optinal, Set default triggers to facilitate users to quickly deploy Amo
 # allowed trigger type: schedule
 [amo.triggers.schedule]
-enable = true
+enabled = false
 expr = "0 * * * *" # (cron expression) every hour at minute 0
 """
 from fake_builtin import *  # Valid only for development, ignored in production
