@@ -22,8 +22,11 @@ description = "每20分钟检查一次推特更新。通过猫头鹰递信(70001
 
 [amo.arguments] # Optional, depends on script logic
 # argument name: customized
-# allowed argument properties: label, type, value, hint, required
-# required: label, type
+# argument properties: label, type, value, hint, required, options
+#   required proeprties: label, type, value
+#   argument type: string, number, boolean, selection, mixin_assets
+#   options format: [ ["label",value"], ... ]
+
 [amo.arguments.user_id]
 label = "用户 ID"
 type = "string"

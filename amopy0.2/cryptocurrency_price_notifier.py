@@ -22,24 +22,30 @@ description = "每小时检查一次价格，根据条件发送提醒消息（�
 
 [amo.arguments] # Optional, depends on script logic
 # argument name: customized
-# allowed argument properties: label, type, value, hint, required
-# required: label, type
+# argument properties: label, type, value, hint, required, options
+#   required proeprties: label, type, value
+#   argument type: string, number, boolean, selection, mixin_assets
+#   options format: [ ["label",value"], ... ]
+
 [amo.arguments.asset_id]
 label = "资产ID"
 type = "mixin_assets"
 value = "c94ac88f-4671-3976-b60a-09064f1811e8" # default is XIN
 hint = "Mixin Network 资产ID"
 required = true
+
 [amo.arguments.asset_name]
 label = "资产名称"
 type = "string"
 value = "XIN"
 required = true
+
 [amo.arguments.gt]
 label = "大于提醒"
 type = "number"
 value = 350
 hint = "价格大于此值时发送提醒（单位: USD）"
+
 [amo.arguments.lt]
 label = "小于提醒"
 type = "number"

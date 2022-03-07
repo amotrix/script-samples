@@ -22,25 +22,53 @@ description = "每小时检查一次RSS地址，过滤出新文章，发送提�
 
 [amo.arguments] # Optional, depends on script logic
 # argument name: customized
-# allowed argument properties: label, type, value, hint, required
-# required: label, type
+# argument properties: label, type, value, hint, required, options
+#   required proeprties: label, type, value
+#   argument type: string, number, boolean, selection, mixin_assets
+#   options format: [ ["label",value"], ... ]
+
 [amo.arguments.url]
 label = "RSS地址"
 type = "string"
 value = "https://docs.pando.im/blog/rss"
 required = true
+
 [amo.arguments.region]
-label = "地区"
-type = "string"
+label = "检查器所在地"
+type = "selection"
+options = [
+    [
+        "Seoul 首尔",
+        "seoul",
+    ],
+    [
+        "Tokyo 东京",
+        "tokyo",
+    ],
+    [
+        "London 伦敦",
+        "london",
+    ],
+    [
+        "Hongkong 香港",
+        "hongkong",
+    ],
+    [
+        "Virginia 弗吉尼亚",
+        "virginia",
+    ],
+]
 value = "tokyo"
-hint = "seoul, tokyo, london, hongkong, virginia. default is tokyo"
+hint = "根据RSS源选择检查器所在地。例如美国的RSS源可选择弗吉尼亚"
 required = true
+
 
 [amo.triggers] # Optinal, Set default triggers to facilitate users to quickly deploy Amo
 # allowed trigger type: schedule
 [amo.triggers.schedule]
 enable = true
 expr = "0 * * * *" # (cron expression) every hour at minute 0
+
 """
 
 from fake_builtin import *  # Valid only for development, ignored in production

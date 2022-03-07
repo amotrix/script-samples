@@ -22,8 +22,11 @@ description = "通过猫头鹰递信向自己发送一条文本消息。需先�
 
 [amo.arguments] # Optional, depends on script logic
 # argument name: customized
-# argument properties:label, type, value, hint, required
-#       required properties: label, type
+# argument properties: label, type, value, hint, required, options
+#   required proeprties: label, type, value
+#   argument type: string, number, boolean, selection, mixin_assets
+#   options format: [ ["label",value"], ... ]
+
 [amo.arguments.what]
 label = "说什么"
 type = "string"
