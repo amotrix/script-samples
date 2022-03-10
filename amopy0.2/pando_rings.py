@@ -70,11 +70,12 @@ def main(title, symbols, apy_gt):
 
     if symbols:
         symbols = symbols.replace(" ", ",").replace("，", ",").split(",")
+        symbols = [s.upper() for s in symbols]
     apy_gt = float(apy_gt)
 
     asset_lines = []
     for item in markets:
-        symbol = item["symbol"]
+        symbol = item["symbol"].upper()
         # filter by symbol
         if symbols and symbol not in symbols:
             continue
