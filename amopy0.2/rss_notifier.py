@@ -5,7 +5,7 @@
 name = "github.com/amotrix"
 contact = "https://github.com/amotrix"
 
-[sample] # Optinal. sample properties
+[sample] # Optional. sample properties
 title = "RSS新文章通知"
 description = "解析指定的RSS地址，当有新文章时发送通知"
 
@@ -23,7 +23,7 @@ description = "每小时检查一次RSS地址，过滤出新文章，发送提�
 [amo.arguments] # Optional, depends on script logic
 # argument name: customized
 # argument properties: label, type, value, hint, required, options
-#   required proeprties: label, type, value
+#   required properties: label, type, value
 #   argument type: string, number, boolean, selection, mixin_assets
 #   options format: [ ["label",value"], ... ]
 
@@ -63,7 +63,7 @@ hint = "根据RSS源选择检查器所在地。例如美国的RSS源可选择弗
 required = true
 
 
-[amo.triggers] # Optinal, Set default triggers to facilitate users to quickly deploy Amo
+[amo.triggers] # Optional, Set default triggers to facilitate users to quickly deploy Amo
 # allowed trigger type: schedule
 [amo.triggers.schedule]
 enable = true

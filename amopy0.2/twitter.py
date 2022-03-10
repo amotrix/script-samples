@@ -5,7 +5,7 @@
 name = "github.com/amotrix"
 contact = "https://github.com/amotrix"
 
-[sample] # Optinal. sample properties
+[sample] # Optional. sample properties
 title = "关注 Twitter 更新"
 description = "关注指定的推特账号，递送新推文"
 
@@ -23,7 +23,7 @@ description = "每20分钟检查一次推特更新。通过猫头鹰递信(70001
 [amo.arguments] # Optional, depends on script logic
 # argument name: customized
 # argument properties: label, type, value, hint, required, options
-#   required proeprties: label, type, value
+#   required properties: label, type, value
 #   argument type: string, number, boolean, selection, mixin_assets
 #   options format: [ ["label",value"], ... ]
 
@@ -46,7 +46,7 @@ type = "boolean"
 value = true
 required = true
 
-[amo.triggers] # Optinal, Set default triggers to facilitate users to quickly deploy Amo
+[amo.triggers] # Optional, Set default triggers to facilitate users to quickly deploy Amo
 # allowed trigger type: schedule
 [amo.triggers.schedule]
 enable = true

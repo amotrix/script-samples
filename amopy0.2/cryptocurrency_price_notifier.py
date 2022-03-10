@@ -5,7 +5,7 @@
 name = "github.com/amotrix"
 contact = "https://github.com/amotrix"
 
-[sample] # Optinal. sample properties
+[sample] # Optional. sample properties
 title = "加密货币价格提醒"
 description = "当加密货币价格达到指定值时发送通知"
 
@@ -23,7 +23,7 @@ description = "每小时检查一次价格，根据条件发送提醒消息（�
 [amo.arguments] # Optional, depends on script logic
 # argument name: customized
 # argument properties: label, type, value, hint, required, options
-#   required proeprties: label, type, value
+#   required properties: label, type, value
 #   argument type: string, number, boolean, selection, mixin_assets
 #   options format: [ ["label",value"], ... ]
 
@@ -53,7 +53,7 @@ value = 300
 hint = "价格小于此值时发送提醒（单位: USD）"
 
 
-[amo.triggers] # Optinal, Set default triggers to facilitate users to quickly deploy Amo
+[amo.triggers] # Optional, Set default triggers to facilitate users to quickly deploy Amo
 # allowed trigger type: schedule
 [amo.triggers.schedule]
 enable = false

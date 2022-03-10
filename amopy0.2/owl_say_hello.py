@@ -5,7 +5,7 @@
 name = "github.com/amotrix"
 contact = "https://github.com/amotrix"
 
-[sample] # Optinal. sample properties
+[sample] # Optional. sample properties
 title = "猫头鹰说你好"
 description = "通过猫头鹰机器人向自己发送一条文本消息"
 
@@ -18,12 +18,12 @@ memory = 128         # Required
 
 [amo.profile] # Optional. Amo default profile
 title = "猫头鹰说你好"
-description = "通过猫头鹰递信向自己发送一条文本消息。需先添加猫头鹰递信机器人（7000102034）为好友"
+description = "通过猫头鹰递信向自己发送一条文本消息。需先添加猫头鹰递信机器人(7000102034)为好友"
 
 [amo.arguments] # Optional, depends on script logic
 # argument name: customized
 # argument properties: label, type, value, hint, required, options
-#   required proeprties: label, type, value
+#   required properties: label, type, value
 #   argument type: string, number, boolean, selection, mixin_assets
 #   options format: [ ["label",value"], ... ]
 
