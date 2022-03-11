@@ -71,10 +71,12 @@ expr = "0 * * * *" # (cron expression) every hour at minute 0
 
 """
 
-from fake_builtin import *  # Valid only for development, ignored in production
+from ._fake_builtin import *  # Valid only for development, ignored in production
 
 amostorage = extensions.amo_storage
 owl = extensions.owl
+re = extensions.re
+time = extensions.time
 
 
 def text_compact(text, keep_multi_empty_lines=False):
@@ -85,11 +87,11 @@ def text_compact(text, keep_multi_empty_lines=False):
         return ""
 
     if not keep_multi_empty_lines:
-        text = regex_sub(r"\s+?(\S)", r" \1", text)
+        text = re.sub(r"\s+?(\S)", r" \1", text)
     else:
-        text = regex_sub(r"[\t\f\v ]+?([\S\r\n])", r" \1", text)
-        text = regex_sub(r"\r", r"\n", text)
-        text = regex_sub(r"\n+", r"\n", text)
+        text = re.sub(r"[\t\f\v ]+?([\S\r\n])", r" \1", text)
+        text = re.sub(r"\r", r"\n", text)
+        text = re.sub(r"\n+", r"\n", text)
 
     text = text.strip()
     return text
@@ -105,7 +107,7 @@ def render_article_text(article):
         + "》\n"
         + text_compact(article["content_value"])
         + "\n"
-        + strftime(article["pub_uts"] + 8 * 3600, "%m-%d %H:%M")
+        + time.strftime("%y-%m-%d %H:%M", time.gmtime(article["pub_uts"] + 8 * 3600))
         + " UTC+8\n"
         + article["link"]
     )
